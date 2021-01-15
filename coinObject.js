@@ -35,7 +35,7 @@ function display20Flips() {
         results.push(coin.state==0 ? 'Heads' : 'Tails')
         
     }
-document.body.innerText = results;
+document.getElementById("arr").innerHTML = results;
     // 4. Um ponto: Use um loop para arremessar a moeda 20 vezes, cada vez 
     // mostrando o resultado como uma string na página. 
     // Depois de que seu loop terminar, retorne um array com o 
@@ -47,13 +47,15 @@ function display20Images() {
     const results = [];
 
     for (let i = 0; i < 20; i++) {
-    coin.toHTML();
-    results.push(coin.state);
+    document.getElementById("img").appendChild(coin.toHTML());
+    results.push(coin.state==0 ? 'Heads' : 'Tails');
     }
-
+document.getElementById('arr').innerHTML = results;
     // 5. Um ponto: Use um loop para arremessar a moeda 20 vezes, cada vez 
     // mostrando o resultado como uma imagem na página. 
     // Depois de que seu loop terminar, retorne um array com o 
     // resultado de cada arremesso.
 
 }
+display20Images();
+display20Flips();
